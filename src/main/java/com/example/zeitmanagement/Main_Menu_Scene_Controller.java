@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,12 +46,21 @@ public class Main_Menu_Scene_Controller  {
         @FXML
         private Label labelEinstempelZeit;
 
+        @FXML
+        private ProgressIndicator ZeiterfassungGrafik;
+
 
         private LocalDate myDate; // Declare myDate as a field
         private LocalTime myTime_in; // zeit wann eingestempelt
         private LocalTime myTime_out; // zeit wann eingestempelt
         private LocalTime myTime_in_formatted; // zeit wann eingestempelt
         private LocalTime myTime_out_formatted; // zeit wann eingestempelt
+
+        LocalTime myTimeIn;
+
+        LocalTime myTimeOut;
+
+        float elapsedSeconds;
 
         public Main_Menu_Scene_Controller() {
         }
@@ -154,7 +165,18 @@ public class Main_Menu_Scene_Controller  {
                 stage.show();
         }
 
+        @FXML
+        void ZeiterfassungGrafikAktualisieren(MouseEvent event) {
 
+                // loop und aktuelle Zeit
+                float Arbeitszeit = 8;
+                float elapsedHours = (elapsedSeconds / 3600);
+
+                float Prozent = (Arbeitszeit - elapsedHours)/ Arbeitszeit;
+
+                System.out.println(Prozent);
+                ZeiterfassungGrafik.setProgress(0.31);
+        }
 
 }
 

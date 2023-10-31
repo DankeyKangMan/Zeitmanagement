@@ -41,10 +41,7 @@ public class Scenengerippe_Controller {
 
     @FXML
     void Calendar_Button(ActionEvent event) throws IOException {
-        if (borderpane != null) {
-            BorderPane view = FXMLLoader.load(getClass().getResource("main-menu-scene.fxml"));
-            borderpane.setCenter(view);
-        }
+
     }
 
     @FXML
@@ -78,7 +75,10 @@ public class Scenengerippe_Controller {
     }
 
     @FXML
-    void Time_REC_Button(ActionEvent event) {
-
+    void Time_REC_Button(ActionEvent event) throws IOException {
+        if (borderpane != null) {
+            BorderPane view = FXMLLoader.load(getClass().getResource("main-menu-scene.fxml"));
+            borderpane.setCenter(view);
+        }
     }
 }
