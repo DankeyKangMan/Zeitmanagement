@@ -47,11 +47,10 @@ public class Login_Scene_Controller {
             }
         }
 
-        if (authenticatedEmployee != null) {
-            // Successful login
-            loadMenuScene();
-            // Perform any actions you want on successful login
-        }
+        // Successful login
+        // Perform any actions you want on successful login
+        if (authenticatedEmployee != null) loadGerippeScene();
+
         else if (!usernameTextField.getText().isBlank() && !passwordPasswordField.getText().isBlank()) {
             loginMessageLabel.setText("Invalid username or password!");
         } else {
@@ -64,9 +63,18 @@ public class Login_Scene_Controller {
         stage.close();
     }
 
+
     @FXML
     private void loadMenuScene() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu-scene.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) loginMessageLabel.getScene().getWindow(); // Get the current stage
+        stage.setScene(scene);
+    }
+
+    @FXML
+    private void loadGerippeScene() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scenengerippe.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) loginMessageLabel.getScene().getWindow(); // Get the current stage
         stage.setScene(scene);
