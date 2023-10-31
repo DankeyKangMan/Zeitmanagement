@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Scene xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <root>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <VBox prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem mnemonicParsing="false" text="Admin Login" />
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Profile">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Your Profile" />
+                              <MenuItem mnemonicParsing="false" text="Logout" />
+                          </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </VBox>
+         </top>
+         <left>
+            <AnchorPane prefHeight="374.0" prefWidth="128.0" style="-fx-background-color: #263f73;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="10.0" layoutY="122.0" mnemonicParsing="false" text="Kalender" textAlignment="CENTER" />
+                  <Button layoutX="10.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" text="Monatsübersicht" textAlignment="CENTER" />
+                  <Button layoutX="10.0" layoutY="86.0" mnemonicParsing="false" text="Jahresübersicht" textAlignment="CENTER" />
+                  <Button layoutX="10.0" layoutY="14.0" mnemonicParsing="false" text="Zeiterfassung" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <SubScene height="373.0" width="474.0" BorderPane.alignment="CENTER">
+              <root>
+                <Region />
+              </root>
+            </SubScene>
+         </center>
+      </BorderPane>
+   </root>
+</Scene>
