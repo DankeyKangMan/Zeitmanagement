@@ -66,7 +66,7 @@ public class Login_Scene_Controller {
 
     @FXML
     private void loadMenuScene() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu-scene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Zeiterfassung.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) loginMessageLabel.getScene().getWindow(); // Get the current stage
         stage.setScene(scene);

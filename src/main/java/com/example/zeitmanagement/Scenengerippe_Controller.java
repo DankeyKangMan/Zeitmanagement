@@ -77,7 +77,7 @@ public class Scenengerippe_Controller {
     @FXML
     void Time_REC_Button(ActionEvent event) throws IOException {
         if (borderpane != null) {
-            BorderPane view = FXMLLoader.load(getClass().getResource("main-menu-scene.fxml"));
+            BorderPane view = FXMLLoader.load(getClass().getResource("Zeiterfassung.fxml"));
             borderpane.setCenter(view);
         }
     }
