@@ -2,22 +2,22 @@ package com.example.zeitmanagement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.util.converter.LocalDateTimeStringConverter;
+import javafx.stage.Stage;
 
-import java.text.SimpleDateFormat;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
+
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 
@@ -35,14 +35,27 @@ public class Main_Menu_Scene_Controller  {
         @FXML
         private Label myLabel;
 
+        @FXML
+        private Button Logout;
+
+        @FXML
+        private Label labelAusstempelZeit;
+
+        @FXML
+        private Label labelEinstempelZeit;
+
+
         private LocalDate myDate; // Declare myDate as a field
         private LocalTime myTime_in; // zeit wann eingestempelt
         private LocalTime myTime_out; // zeit wann eingestempelt
         private LocalTime myTime_in_formatted; // zeit wann eingestempelt
         private LocalTime myTime_out_formatted; // zeit wann eingestempelt
 
+        public Main_Menu_Scene_Controller() {
+        }
+
         @FXML
-        void Eingestempelt(MouseEvent event) {
+        void Eingestempelt(ActionEvent event) {
 
                 myTime_in = LocalTime.now();
 
@@ -52,12 +65,12 @@ public class Main_Menu_Scene_Controller  {
 
                 String myTime_in_formatted = formatter.format(myTime_in);
 
-                //System.out.println(myTime_in_formatted);
+                labelEinstempelZeit.setText(myTime_in_formatted);
 
         }
 
         @FXML
-        void Ausgestempelt(MouseEvent event) {
+        void Ausgestempelt(ActionEvent event) {
                 myTime_out = LocalTime.now();
 
                 //System.out.println(myTime_out);
@@ -101,6 +114,8 @@ public class Main_Menu_Scene_Controller  {
                 float elapsedSeconds = Duration.between(myTimeIn, myTimeOut).toSeconds();
                 System.out.println(elapsedSeconds/60);
 
+                labelAusstempelZeit.setText(myTime_out_formatted);
+
         }
 
         @FXML
@@ -124,17 +139,22 @@ public class Main_Menu_Scene_Controller  {
 
         }
 
+        private Stage stage;
+        private Scene scene;
+        private Parent root;
+
         @FXML
-        void onHelloButtonClick(ActionEvent event) {
+        private void loadLoginScene(ActionEvent event) throws IOException {
 
-                if(myDate == null){
-                        System.out.println("Bitte Datum wählen");
-                }
-                else{
-                        System.out.println("Datum gewählt");
-                }
 
+                Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
         }
+
+
 
 }
 
