@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
@@ -57,7 +56,7 @@ public class Zeiterfassung_Controller  {
     float elapsedSeconds;
 
     @FXML
-    void Eingestempelt(ActionEvent event) {
+    void Eingestempelt() {
 
         myTime_in = LocalTime.now();
 
@@ -72,7 +71,7 @@ public class Zeiterfassung_Controller  {
     }
 
     @FXML
-    void Ausgestempelt(ActionEvent event) {
+    void Ausgestempelt() {
         myTime_out = LocalTime.now();
 
         //System.out.println(myTime_out);
@@ -121,7 +120,7 @@ public class Zeiterfassung_Controller  {
     }
 
     @FXML
-    void myDate(ActionEvent event) {
+    void myDate() {
 
         LocalDate myDate = DatePicker.getValue();
         System.out.println(myDate.toString());
@@ -143,7 +142,6 @@ public class Zeiterfassung_Controller  {
 
     private Stage stage;
     private Scene scene;
-    private Parent root;
 
     @FXML
     private void loadLoginScene(ActionEvent event) throws IOException {
@@ -157,7 +155,7 @@ public class Zeiterfassung_Controller  {
     }
 
     @FXML
-    void ZeiterfassungGrafikAktualisieren(MouseEvent event) {
+    void ZeiterfassungGrafikAktualisieren() {
 
         // loop und aktuelle Zeit
         float Arbeitszeit = 8;

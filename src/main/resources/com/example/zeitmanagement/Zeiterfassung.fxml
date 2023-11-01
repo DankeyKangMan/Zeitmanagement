@@ -13,15 +13,16 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zeitmanagement.Zeiterfassung_Controller">
    <bottom>
       <AnchorPane prefHeight="100.0" prefWidth="300.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="Logout" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#loadLoginScene" style="-fx-background-color: #ff5e5e;" text="Logout" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <effect>
-                  <InnerShadow />
-               </effect>
-            </Button>
-            <Label fx:id="myLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="424.0" layoutY="51.0" text="Label" textAlignment="CENTER" />
-            <DatePicker fx:id="DatePicker" layoutX="190.0" layoutY="41.0" onAction="#myDate" promptText="datum" />
-         </children>
+         <Button fx:id="Logout" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#loadLoginScene"
+                 style="-fx-background-color: #ff5e5e;" text="Logout" textAlignment="CENTER" textFill="WHITE"
+                 textOverrun="CENTER_ELLIPSIS">
+            <effect>
+               <InnerShadow/>
+            </effect>
+         </Button>
+         <Label fx:id="myLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="14.0"
+                prefHeight="18.0" prefWidth="314.0" textAlignment="CENTER"/>
+         <DatePicker fx:id="DatePicker" layoutX="190.0" layoutY="41.0" onAction="#myDate" promptText="datum"/>
       </AnchorPane>
    </bottom>
    <center>

@@ -6,35 +6,34 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zeitmanagement.Scenengerippe_Controller" fx:id="borderpane">
    <top>
-      <VBox prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <MenuBar>
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                        <MenuItem fx:id="Admin_Login" mnemonicParsing="false" onAction="#Menu_File_AdminLogin" text="Admin Login" />
-                    <MenuItem fx:id="Close" mnemonicParsing="false" onAction="#Menu_File_Close" text="Close" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Profile">
-                    <items>
-                      <MenuItem fx:id="Your_Profile" mnemonicParsing="false" onAction="#Menu_Profile_YourProfile" text="Your Profile" />
-                        <MenuItem fx:id="Logout" mnemonicParsing="false" onAction="#Menu_Profile_Logout" text="Logout" />
-                    </items>
-                  </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </VBox>
+       <VBox prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <MenuBar>
+               <Menu mnemonicParsing="false" text="File">
+                   <MenuItem fx:id="Admin_Login" mnemonicParsing="false" onAction="#Menu_File_AdminLogin"
+                             text="Admin Login"/>
+                   <MenuItem fx:id="Close" mnemonicParsing="false" onAction="#Menu_File_Close" text="Close"/>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Profile">
+                   <MenuItem fx:id="Your_Profile" mnemonicParsing="false" onAction="#Menu_Profile_YourProfile"
+                             text="Your Profile"/>
+                   <MenuItem fx:id="Logout" mnemonicParsing="false" onAction="#Menu_Profile_Logout"
+                             text="Logout"/>
+               </Menu>
+           </MenuBar>
+       </VBox>
    </top>
    <left>
-      <AnchorPane prefHeight="374.0" prefWidth="128.0" style="-fx-background-color: #263f73;" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="calendar" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#Calendar_Button" text="Kalender" textAlignment="CENTER" />
-            <Button fx:id="overview_month" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#Overview_Month_Button" prefHeight="26.0" prefWidth="108.0" text="Monatsübersicht" textAlignment="CENTER" />
-            <Button fx:id="overview_year" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#Overview_Year_Button" text="Jahresübersicht" textAlignment="CENTER" />
-            <Button fx:id="time_rec" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#Time_REC_Button" text="Zeiterfassung" textAlignment="CENTER" />
-         </children>
-      </AnchorPane>
+       <AnchorPane prefHeight="374.0" prefWidth="128.0" style="-fx-background-color: #263f73;"
+                   BorderPane.alignment="CENTER">
+           <Button fx:id="calendar" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#Calendar_Button"
+                   text="Kalender" textAlignment="CENTER"/>
+           <Button fx:id="overview_month" layoutX="10.0" layoutY="50.0" mnemonicParsing="false"
+                   onAction="#Overview_Month_Button" prefHeight="26.0" prefWidth="108.0" text="Monatsübersicht"
+                   textAlignment="CENTER"/>
+           <Button fx:id="overview_year" layoutX="10.0" layoutY="86.0" mnemonicParsing="false"
+                   onAction="#Overview_Year_Button" text="Jahresübersicht" textAlignment="CENTER"/>
+           <Button fx:id="time_rec" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#Time_REC_Button"
+                   text="Zeiterfassung" textAlignment="CENTER"/>
+       </AnchorPane>
    </left>
 </BorderPane>
