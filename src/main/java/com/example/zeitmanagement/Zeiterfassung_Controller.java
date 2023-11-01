@@ -36,6 +36,9 @@ public class Zeiterfassung_Controller  {
     private Label myLabel;
 
     @FXML
+    private Label TimeWorkedTodayLabel;
+
+    @FXML
     private Button Logout;
 
     @FXML
@@ -112,12 +115,26 @@ public class Zeiterfassung_Controller  {
 
         System.out.println(MINUTES.between(myTimeIn, myTimeOut));
 
-        float elapsedSeconds = Duration.between(myTimeIn, myTimeOut).toSeconds();
+        elapsedSeconds += Duration.between(myTimeIn, myTimeOut).toSeconds();
         System.out.println(elapsedSeconds/60);
 
         labelAusstempelZeit.setText(myTime_out_formatted);
 
+
+        TimeWorkedToday();
+        ZeiterfassungGrafikAktualisieren();
     }
+
+
+    @FXML
+    void TimeWorkedToday(){
+
+        int elapsedHours = (int)elapsedSeconds / 3600;
+        int elapsedMinutes = ((int)elapsedSeconds % 3600) / 60;
+
+        TimeWorkedTodayLabel.setText("Heute gearbeitet: " + elapsedHours + " Stunden und " + elapsedMinutes + " Minuten");
+    }
+
 
     @FXML
     void myDate() {
@@ -161,10 +178,10 @@ public class Zeiterfassung_Controller  {
         float Arbeitszeit = 8;
         float elapsedHours = (elapsedSeconds / 3600);
 
-        float Prozent = (Arbeitszeit - elapsedHours)/ Arbeitszeit;
+        float Prozent = elapsedHours/Arbeitszeit;
 
         System.out.println(Prozent);
-        ZeiterfassungGrafik.setProgress(0.31);
+        ZeiterfassungGrafik.setProgress(Prozent);
     }
 
 }
