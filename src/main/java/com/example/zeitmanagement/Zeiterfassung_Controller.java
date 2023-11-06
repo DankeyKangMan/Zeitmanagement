@@ -176,7 +176,7 @@ public class Zeiterfassung_Controller  {
 
         // loop und aktuelle Zeit
         float Arbeitszeit = 8;
-        float elapsedHours = (elapsedSeconds / 3600);
+        float elapsedHours = (elapsedSeconds /3600);
 
         float Prozent = elapsedHours/Arbeitszeit;
 

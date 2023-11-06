@@ -41,7 +41,7 @@
          <Label fx:id="labelEinstempelZeit" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="61.0" text="Zeit" textAlignment="CENTER" />
          <Label fx:id="labelAusstempelZeit" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="134.0" text="Zeit" />
          <ProgressIndicator fx:id="ZeiterfassungGrafik" layoutX="407.0" layoutY="95.0" prefHeight="83.0" prefWidth="64.0" progress="0.0" scaleX="3.0" scaleY="3.0" />
-         <Label fx:id="TimeWorkedTodayLabel" layoutX="16.0" layoutY="177.0" prefHeight="18.0" prefWidth="246.0" text="Heute gearbeitet: 0 Stunden und 0 Minuten" />
+         <Label fx:id="TimeWorkedTodayLabel" layoutX="48.0" layoutY="177.0" prefHeight="18.0" prefWidth="246.0" text="Heute gearbeitet: 0 Stunden und 0 Minuten" />
       </AnchorPane>
    </center>
    <top>

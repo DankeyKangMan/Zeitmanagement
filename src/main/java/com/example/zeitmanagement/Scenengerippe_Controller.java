@@ -65,9 +65,13 @@ public class Scenengerippe_Controller {
     }
 
     @FXML
-    void Overview_Month_Button(ActionEvent event) {
-
+    void Overview_Month_Button(ActionEvent event) throws IOException {
+        if (borderpane != null) {
+            BorderPane view = FXMLLoader.load(getClass().getResource("Monatsübersicht.fxml"));
+            borderpane.setCenter(view);
+        }
     }
+
 
     @FXML
     void Overview_Year_Button(ActionEvent event) {
@@ -82,3 +86,5 @@ public class Scenengerippe_Controller {
         }
     }
 }
+
+
