@@ -3,10 +3,15 @@ package com.example.zeitmanagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -53,11 +58,23 @@ public class Scenengerippe_Controller {
     void Menu_File_Close(ActionEvent event) {
 
     }
+    private Stage stage;
+    private Scene scene;
 
     @FXML
-    void Menu_Profile_Logout(ActionEvent event) {
-
+    private void Menu_Profile_Logout(ActionEvent event) throws IOException {
+        if (event.getSource() instanceof MenuItem) {
+            MenuItem menuItem = (MenuItem) event.getSource();
+            if (menuItem.getParentPopup() != null) {
+                Stage stage = (Stage) menuItem.getParentPopup().getOwnerWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
     }
+
 
     @FXML
     void Menu_Profile_YourProfile(ActionEvent event) {

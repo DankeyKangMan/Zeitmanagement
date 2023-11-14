@@ -39,9 +39,6 @@ public class Zeiterfassung_Controller  {
     private Label TimeWorkedTodayLabel;
 
     @FXML
-    private Button Logout;
-
-    @FXML
     private Label labelAusstempelZeit;
 
     @FXML
@@ -81,37 +78,12 @@ public class Zeiterfassung_Controller  {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        //-----------------
-
         String myTime_in_formatted = formatter.format(myTime_in);
-
-        System.out.print("IN:  ");
-        System.out.println(myTime_in_formatted);
-
-        //-----------------
 
         String myTime_out_formatted = formatter.format(myTime_out);
 
-        System.out.print("Out: ");
-        System.out.println(myTime_out_formatted);
-
-
-        //-----------------------------------
-
-        System.out.println(myTime_in_formatted.getClass().getName());
-        System.out.println(myTime_out_formatted.getClass().getName());
-
-        //-----------------------------------
-
         LocalTime myTimeIn = LocalTime.parse(myTime_in_formatted, DateTimeFormatter.ofPattern("HH:mm:ss"));
         LocalTime myTimeOut = LocalTime.parse(myTime_out_formatted, DateTimeFormatter.ofPattern("HH:mm:ss"));
-
-        //-----------------------------------
-
-        System.out.println(myTimeIn.getClass().getName());
-        System.out.println(myTimeOut.getClass().getName());
-
-        //-----------------------------------
 
         System.out.println(MINUTES.between(myTimeIn, myTimeOut));
 
@@ -129,8 +101,11 @@ public class Zeiterfassung_Controller  {
     @FXML
     void TimeWorkedToday(){
 
-        int elapsedHours = (int)elapsedSeconds / 3600;
-        int elapsedMinutes = ((int)elapsedSeconds % 3600) / 60;
+        //int elapsedHours = (int)elapsedSeconds / 3600;
+        //int elapsedMinutes = ((int)elapsedSeconds % 3600) / 60;
+
+        int elapsedHours = (int)elapsedSeconds / 60;
+        int elapsedMinutes = ((int)elapsedSeconds % 60);
 
         TimeWorkedTodayLabel.setText("Heute gearbeitet: " + elapsedHours + " Stunden und " + elapsedMinutes + " Minuten");
     }
@@ -157,26 +132,14 @@ public class Zeiterfassung_Controller  {
 
     }
 
-    private Stage stage;
-    private Scene scene;
-
-    @FXML
-    private void loadLoginScene(ActionEvent event) throws IOException {
-
-
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
     @FXML
     void ZeiterfassungGrafikAktualisieren() {
 
         // loop und aktuelle Zeit
         float Arbeitszeit = 8;
-        float elapsedHours = (elapsedSeconds / 3600);
+        //float elapsedHours = (elapsedSeconds / 3600);
+
+        float elapsedHours = (elapsedSeconds / 60);
 
         float Prozent = elapsedHours/Arbeitszeit;
 
